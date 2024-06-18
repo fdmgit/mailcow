@@ -185,7 +185,8 @@ inst_f2b () {
       rm fail2ban_1.1.0-1.upstream1_all.deb
       cd /etc/fail2ban/jail.d
       touch 01-sshd.local
-      cat >> /etc/fail2ban/jail.d/01-sshd.local <<'EOF'
+cat >> /etc/fail2ban/jail.d/01-sshd.local <<'EOF'
+      
 [sshd]
 
 # To use more aggressive sshd modes set filter parameter "mode" in jail.local:
@@ -201,7 +202,7 @@ bantime  = 24h
 findtime = 125m
 maxretry = 3
 
-      EOF
+EOF
       
       systemctl restart fail2ban
       wait 10
