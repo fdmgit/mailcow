@@ -204,7 +204,7 @@ maxretry = 3
 
 EOF
       systemctl restart fail2ban
-      sleep 10
+      sleep 5
 }
 
 inst_docker () {
