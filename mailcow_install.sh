@@ -212,6 +212,15 @@ inst_docker () {
       systemctl enable --now docker
 }
 
+inst_mailcow () {
+      cd /opt
+      git clone https://github.com/mailcow/mailcow-dockerized
+      cd /opt/mailcow-dockerized
+      ./generate_config.sh
+      docker compose pull
+      docker compose -d
+}
+
 #####################################################################################
 #                             MAILCOW MAIL SERVER                                   #
 #####################################################################################
@@ -223,7 +232,7 @@ server_env
 inst_pre_tasks
 inst_f2b
 inst_docker
-#inst_mailcow
+inst_mailcow
 closing_msg
 
 reboot
