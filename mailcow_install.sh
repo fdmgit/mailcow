@@ -207,6 +207,10 @@ EOF
       sleep 10
 }
 
+inst_docker () {
+      curl -sSL https://get.docker.com/ | CHANNEL=stable sh
+      systemctl enable --now docker
+}
 
 #####################################################################################
 #                             MAILCOW MAIL SERVER                                   #
@@ -218,6 +222,7 @@ ssh_hard
 server_env
 inst_pre_tasks
 inst_f2b
+inst_docker
 #inst_mailcow
 closing_msg
 
