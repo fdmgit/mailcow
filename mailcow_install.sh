@@ -218,7 +218,7 @@ inst_mailcow () {
       cd /opt/mailcow-dockerized
       ./generate_config.sh
       docker compose pull
-      docker compose -d
+      docker compose up -d
 }
 
 #####################################################################################
