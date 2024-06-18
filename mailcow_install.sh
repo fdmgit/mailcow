@@ -204,7 +204,7 @@ maxretry = 3
 
 EOF
       systemctl restart fail2ban
-      #wait 10
+      sleep 10
 }
 
 
@@ -218,7 +218,6 @@ ssh_hard
 server_env
 inst_pre_tasks
 inst_f2b
-wait 10
 #inst_mailcow
 closing_msg
 
