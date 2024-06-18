@@ -135,7 +135,7 @@ ssh_hard () {
 server_env () {
 
     cd /root
-    wget https://raw.githubusercontent.com/fdmgit/modobao/main/bashrc.ini
+    https://raw.githubusercontent.com/fdmgit/mailcow/main/bashrc.ini
     cp bashrc.ini /root/.bashrc
     cp bashrc.ini /etc/skel/.bashrc
     rm /root/bashrc.ini
