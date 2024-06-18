@@ -203,7 +203,6 @@ findtime = 125m
 maxretry = 3
 
 EOF
-      
       systemctl restart fail2ban
       wait 10
 }
