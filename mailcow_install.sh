@@ -33,7 +33,7 @@ LCYAN=$(echo -en '\001\033[01;36m\002')
 print_header () {
    clear
    echo ""
-   echo -e "${YELLOW}     Welcome to the Modoboa Mail Server installer!${NC}"
+   echo -e "${YELLOW}     Welcome to the Mailcow Mail Server installer!${NC}"
    echo -e "${GREEN}"
    echo "     I need to ask you a few questions before starting the setup."
    echo ""
@@ -42,7 +42,7 @@ print_header () {
 print_conf () {
    clear
    echo ""
-   echo -e "${YELLOW}     Modoboa Mail Server installer${NC}"
+   echo -e "${YELLOW}     Mailcow Mail Server installer${NC}"
    echo -e "${GREEN}"
    echo "     Your input is:"
    echo ""
@@ -178,9 +178,20 @@ closing_msg () {
     echo ""
 }
 
+inst_f2b () {
+      cd /root
+      wget https://github.com/fail2ban/fail2ban/releases/download/1.1.0/fail2ban_1.1.0-1.upstream1_all.deb
+      apt install ./fail2ban_1.1.0-1.upstream1_all.deb -y 
+      rm fail2ban_1.1.0-1.upstream1_all.deb
+      cd /etc/fail2ban/jail.d
+      touch 01-sshd.local
+      
+      systemctl restart fail2ban
+      wait 20
+}
 
 #####################################################################################
-#                             MODOBOA MAIL SERVER                                   #
+#                             MAILCOW MAIL SERVER                                   #
 #####################################################################################
 
 #### Pre-installation
