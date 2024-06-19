@@ -226,6 +226,8 @@ inst_logo () {
      cd /opt/mailcom-dockerized/data/conf/sogo
      wget https://raw.githubusercontent.com/fdmgit/mailcow/main/sogo-full.svg
      cp custom-favicon.ico custom-favicon.ico.orig
+     rm custom-favicon.ico
+     wget https://raw.githubusercontent.com/fdmgit/mailcow/main/custom-favicon.ico
      
 }
 
@@ -241,6 +243,7 @@ inst_pre_tasks
 inst_f2b
 inst_docker
 inst_mailcow
+#inst_logo
 closing_msg
 
 reboot
