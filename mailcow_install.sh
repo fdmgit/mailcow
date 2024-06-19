@@ -224,8 +224,9 @@ inst_mailcow () {
 inst_logo () {
 
      cd /opt/mailcom-dockerized/data/conf/sogo
-     wget 
-
+     wget https://raw.githubusercontent.com/fdmgit/mailcow/main/sogo-full.svg
+     cp custom-favicon.ico custom-favicon.ico.orig
+     
 }
 
 #####################################################################################
